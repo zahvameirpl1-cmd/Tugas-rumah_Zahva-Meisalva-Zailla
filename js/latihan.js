@@ -15,7 +15,7 @@ console.log(`Nama: ${nama}, kelas ${kelas}`);
 console.log(`Nilai tugas ${nilaiTugas}, UTS ${nilaiUts}, UAS $
 {nilaiUas}`);
 // 3. Fungsi
-const hitungRataRata = (tugas, uts, uas) => (tugas + uts + uas) / 3;
+const hitungRataRataLatihan = (tugas, uts, uas) => (tugas + uts + uas) / 3;
 function predikat(nilai) {
     if (nilai >= 90) {
         return "A";
@@ -28,11 +28,11 @@ function predikat(nilai) {
     }
 }
 function rapor(namaSiswa, tugas, uts, uas) {
-    const rata = hitungRataRata(tugas, uts, uas);
+    const rata = hitungRataRataLatihan(tugas, uts, uas);
     return `${namaSiswa}: rata-rata ${rata}, predikat $
 {predikat(rata)}`;
 }// 4. Hasil nilai Zahva
-const rataRata = hitungRataRata(nilaiTugas, nilaiUts, nilaiUas);
+const rataRata = hitungRataRataLatihan(nilaiTugas, nilaiUts, nilaiUas);
 const lulus = rataRata >= kkm;
 const dapatSertifikat = lulus && kehadiran >= 80;
 console.log(`Rata-rata nilai: ${rataRata}`);
