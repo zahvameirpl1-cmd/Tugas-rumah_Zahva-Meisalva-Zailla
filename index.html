@@ -7,8 +7,47 @@
   <title>Zahva Meisalva Zailla | Beranda</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@600;700&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* Tombol Mode */
+    .tombol-tema {
+      padding: 10px 15px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      background-color: #2563eb;
+      color: white;
+      font-weight: bold;
+    }
+
+    /* Mode Gelap */
+    body.dark-mode {
+      background-color: #0f172a;
+      color: #f8fafc;
+    }
+
+    body.dark-mode header,
+    body.dark-mode footer {
+      background-color: #1e293b;
+      color: white;
+    }
+
+    body.dark-mode .kartu {
+      background-color: #1e293b;
+      color: white;
+    }
+
+    body.dark-mode a {
+      color: #93c5fd;
+    }
+
+    body.dark-mode .tombol-tema {
+      background-color: #facc15;
+      color: #1e293b;
+    }
+  </style>
   <script src="js/main.js" defer></script>
   <script src="js/tema.js" defer></script>
   <style>
@@ -18,7 +57,6 @@
 <body>
   <header>
     <div class="container navbar">
-      <button id="tombolTema" type="button" aria-pressed="false">🌙 Mode Gelap</button>
       <h1>Zahva Meisalva Zailla</h1>
       <nav class="menu-laptop">
         <ul>
@@ -37,6 +75,7 @@
             <li><a href="proyek.html">Proyek</a></li>
             <li><a href="kontak.html">Kontak</a></li>
             <li><a href="kalkulator.html">Kalkulator</a></li>
+            <li><button id="theme-toggle" class="btn-mode">Mode Gelap</button></li>
           </ul>
         </nav>
       </details>
@@ -127,6 +166,22 @@
 
   <script src="js/latihan.js" defer></script>
     <script>
+    const btnTema = document.getElementById("btnTema");
+    const body = document.body;
+
+    btnTema.addEventListener("click", function() {
+
+      body.classList.toggle("dark-mode");
+
+      if (body.classList.contains("dark-mode")) {
+        btnTema.textContent = "☀️ Mode Terang";
+      } else {
+        btnTema.textContent = "🌙 Mode Gelap";
+      }
+
+    });
+  </script>
+  <script>
   </script>
 
   <footer>

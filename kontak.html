@@ -1,18 +1,71 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Zahva Meisalva Zailla | Kontak</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@600;700&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
+
+  <style>
+    body {
+      background-color: #f5f7fb;
+      color: #222;
+      transition: 0.3s;
+    }
+
+    body.dark-mode {
+      background-color: #121827 !important;
+      color: white !important;
+    }
+
+    body.dark-mode header,
+    body.dark-mode main,
+    body.dark-mode footer,
+    body.dark-mode .kartu {
+      background-color: #1e293b !important;
+      color: white !important;
+    }
+
+    body.dark-mode h1,
+    body.dark-mode h2,
+    body.dark-mode p,
+    body.dark-mode label,
+    body.dark-mode nav a {
+      color: white !important;
+    }
+
+    body.dark-mode input,
+    body.dark-mode select,
+    body.dark-mode textarea {
+      background-color: #334155;
+      color: white;
+      border: 1px solid #64748b;
+    }
+
+    body.dark-mode input::placeholder,
+    body.dark-mode textarea::placeholder {
+      color: #cbd5e1;
+    }
+
+    #btnTema {
+      cursor: pointer;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 8px;
+    }
+  </style>
+</head>
 </head>
 <body>
   <header>
     <div class="container navbar">
       <h1>Zahva Meisalva Zailla</h1>
+      <button type="button" id="btnTema">☀ Mode Terang</button>
       <nav class="menu-laptop">
         <ul>
           <li><a href="index.html">Beranda</a></li>
@@ -66,7 +119,8 @@
           </p>
           <p>
             <label for="pesan">Pesan</label><br>
-            <textarea id="pesan" name="pesan" rows="5" cols="40" placeholder="Tulis pesanmu di sini" required></textarea>
+            <textarea id="pesan" name="pesan" rows="5" cols="40" placeholder="Tulis pesanmu di sini"
+              required></textarea>
           </p>
           <button type="submit">Kirim Pesan</button>
         </form>
@@ -77,9 +131,24 @@
   <footer>
     <p>Kontak: <a href="mailto:ZahvaMei.rpl1@gmail.com">ZahvaMei.rpl1@gmail.com</a> |
       <a href="https://github.com/" target="_blank">GitHub</a> |
-      <a href="https://www.youtube.com/" target="_blank">YouTube</a></p>
+      <a href="https://www.youtube.com/" target="_blank">YouTube</a>
+    </p>
     <p>&copy; 2026 Zahva Meisalva Zailla. Dibuat di Kelas Industri UBIG.</p>
   </footer>
-   <script src="kalkulator.js"></script>
+  <script>
+  const btnTema = document.getElementById("btnTema");
+
+  btnTema.addEventListener("click", function () {
+    document.body.classList.toggle("dark-mode");
+
+    if (document.body.classList.contains("dark-mode")) {
+      btnTema.textContent = "🌙 Mode Gelap";
+    } else {
+      btnTema.textContent = "☀ Mode Terang";
+    }
+  });
+</script>
+  <script src="kalkulator.js"></script>
 </body>
+
 </html>

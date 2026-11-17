@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kalkulator Nilai - Zahva Meisalva Zailla</title>
+
     <style>
         * {
             box-sizing: border-box;
@@ -11,13 +13,16 @@
             padding: 0;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
+
         body {
             background-color: #f4f9f4;
             display: flex;
             flex-direction: column;
             min-height: 100vh;
+            transition: 0.3s;
         }
-        /* Navbar */
+
+        /* NAVBAR */
         nav {
             background-color: #1a365d;
             color: white;
@@ -25,22 +30,39 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
         }
+
         nav h1 {
             font-size: 1.2rem;
             font-weight: bold;
         }
+
         nav ul {
             display: flex;
             list-style: none;
             gap: 20px;
         }
+
         nav ul li a {
             color: #cbd5e1;
             text-decoration: none;
             font-size: 0.9rem;
         }
-        /* Main Content Container */
+
+        /* TOMBOL MODE */
+        #btnTema {
+            background-color: #334155;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            margin: 0;
+        }
+
+        /* MAIN */
         main {
             flex: 1;
             display: flex;
@@ -48,29 +70,34 @@
             align-items: center;
             padding: 40px 20px;
         }
-        /* Card Layout */
+
+        /* KARTU */
         .card {
             background: white;
             width: 100%;
             max-width: 700px;
             padding: 40px;
             border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
         }
+
         .card h2 {
             color: #1a365d;
             margin-bottom: 10px;
             font-size: 1.5rem;
         }
+
         .card p.deskripsi {
             color: #64748b;
             font-size: 0.9rem;
             margin-bottom: 20px;
         }
-        /* Form Inputs */
+
+        /* INPUT */
         .input-group {
             margin-bottom: 15px;
         }
+
         .input-group label {
             display: block;
             font-size: 0.9rem;
@@ -78,6 +105,7 @@
             color: #334155;
             margin-bottom: 8px;
         }
+
         .input-group input {
             width: 50%;
             padding: 10px;
@@ -86,8 +114,9 @@
             font-size: 0.9rem;
             outline: none;
         }
-        /* Button */
-        button {
+
+        /* TOMBOL HITUNG */
+        #btnHitung {
             background-color: #e11d48;
             color: white;
             border: none;
@@ -98,15 +127,18 @@
             margin-bottom: 15px;
             font-weight: bold;
         }
-        button:hover {
+
+        #btnHitung:hover {
             background-color: #be123c;
         }
-        /* Result */
+
+        /* HASIL */
         #hasil {
             font-size: 0.9rem;
             color: #334155;
         }
-        /* Footer */
+
+        /* FOOTER */
         footer {
             background-color: #1a365d;
             color: #cbd5e1;
@@ -115,17 +147,75 @@
             font-size: 0.8rem;
             line-height: 1.6;
         }
+
         footer a {
             color: #cbd5e1;
             text-decoration: underline;
         }
+
+        /* MODE GELAP */
+        body.dark-mode {
+            background-color: #121827;
+            color: white;
+        }
+
+        body.dark-mode nav,
+        body.dark-mode footer {
+            background-color: #0f172a;
+        }
+
+        body.dark-mode .card {
+            background-color: #1e293b;
+            color: white;
+        }
+
+        body.dark-mode .card h2,
+        body.dark-mode .card p,
+        body.dark-mode .input-group label,
+        body.dark-mode #hasil {
+            color: white;
+        }
+
+        body.dark-mode .input-group input {
+            background-color: #334155;
+            color: white;
+            border-color: #64748b;
+        }
+
+        body.dark-mode nav ul li a {
+            color: white;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 600px) {
+            nav {
+                padding: 20px;
+                justify-content: center;
+            }
+
+            nav ul {
+                gap: 12px;
+            }
+
+            .card {
+                padding: 25px;
+            }
+
+            .input-group input {
+                width: 100%;
+            }
+        }
     </style>
 </head>
+
 <body>
 
-    <!-- Navbar Atas -->
+    <!-- NAVBAR -->
     <nav>
         <h1>Zahva Meisalva Zailla</h1>
+
+        <button type="button" id="btnTema">☀ Mode Terang</button>
+
         <ul>
             <li><a href="index.html">Beranda</a></li>
             <li><a href="proyek.html">Proyek</a></li>
@@ -133,39 +223,69 @@
         </ul>
     </nav>
 
-    <!-- Konten Utama (Kartu) -->
+    <!-- KONTEN UTAMA -->
     <main>
         <div class="card">
             <h2>Kalkulator Nilai</h2>
-            <p class="deskripsi">Masukkan nilai tugas, UTS, dan UAS, lalu tekan tombol Hitung.</p>
-            
+
+            <p class="deskripsi">
+                Masukkan nilai tugas, UTS, dan UAS, lalu tekan tombol Hitung.
+            </p>
+
             <div class="input-group">
                 <label for="tugas">Nilai tugas</label>
                 <input type="number" id="tugas" min="0" max="100">
             </div>
-            
+
             <div class="input-group">
                 <label for="uts">Nilai UTS</label>
                 <input type="number" id="uts" min="0" max="100">
             </div>
-            
+
             <div class="input-group">
                 <label for="uas">Nilai UAS</label>
                 <input type="number" id="uas" min="0" max="100">
             </div>
 
-            <button id="btnHitung">Hitung</button>
+            <button type="button" id="btnHitung">Hitung</button>
 
             <p id="hasil"></p>
         </div>
     </main>
 
-    <!-- Footer Bawah -->
+    <!-- FOOTER -->
     <footer>
-        <p>Kontak: <a href="mailto:ZahvaMei.rpl1@gmail.com">ZahvaMei.rpl@gmail.com</a> | <a href="#">GitHub</a> | <a href="#">YouTube</a></p>
-        <p>© 2026 Zahva Meisalva Zailla. Dibuat dengan semangat sambil belajar di Kelas Industri UBIG.</p>
+        <p>
+            Kontak:
+            <a href="mailto:ZahvaMei.rpl1@gmail.com">ZahvaMei.rpl@gmail.com</a> |
+            <a href="#">GitHub</a> |
+            <a href="#">YouTube</a>
+        </p>
+
+        <p>
+            © 2026 Zahva Meisalva Zailla.
+            Dibuat dengan semangat sambil belajar di Kelas Industri UBIG.
+        </p>
     </footer>
 
+    <!-- JAVASCRIPT KALKULATOR -->
     <script src="js/kalkulator.js"></script>
+
+    <!-- JAVASCRIPT MODE GELAP DAN TERANG -->
+    <script>
+        const btnTema = document.getElementById("btnTema");
+
+        btnTema.addEventListener("click", function () {
+            document.body.classList.toggle("dark-mode");
+
+            if (document.body.classList.contains("dark-mode")) {
+                btnTema.textContent = "🌙 Mode Gelap";
+            } else {
+                btnTema.textContent = "☀ Mode Terang";
+            }
+        });
+    </script>
+
 </body>
+
 </html>

@@ -55,3 +55,25 @@ console.log(`predikat(69) = ${predikat(69)}`); // D
 console.log(rapor("Zahva", 85, 78, 89));
 console.log(rapor("Sinta", 92, 88, 96));
 console.log(rapor("Budi", 70, 65, 72));
+if (localStorage.getItem('tema') === 'gelap') {
+    body.classList.add('dark-mode');
+    if (tombolTema) {
+        tombolTema.textContent = 'Mode Terang';
+    }
+}
+
+// 2. Jalankan fungsi saat tombol diklik
+if (tombolTema) {
+    tombolTema.addEventListener('click', () => {
+        body.classList.toggle('dark-mode');
+
+        // Ubah tulisan tombol dan simpan pilihan ke memori browser
+        if (body.classList.contains('dark-mode')) {
+            tombolTema.textContent = 'Mode Terang';
+            localStorage.setItem('tema', 'gelap');
+        } else {
+            tombolTema.textContent = 'Mode Gelap';
+            localStorage.setItem('tema', 'terang');
+        }
+    });
+}

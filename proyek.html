@@ -4,77 +4,75 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Zahva Meisalva Zailla | Proyek</title>
+  <link rel="icon" href="img/foto-profil.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@600;700&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
   <script src="js/main.js" defer></script>
-  <script src="js/tema.js" defer></script>
 </head>
+
 <body>
   <header>
     <div class="container navbar">
-      <button id="tombolTema" type="button" aria-pressed="false">🌙 Mode Gelap</button>
       <h1>Zahva Meisalva Zailla</h1>
       <nav class="menu-laptop">
         <ul>
           <li><a href="index.html">Beranda</a></li>
           <li><a href="proyek.html">Proyek</a></li>
           <li><a href="kontak.html">Kontak</a></li>
-          <li><a href="kalkulator.html">Kalkulator</a></li>
         </ul>
       </nav>
-      <!-- Tantangan: menu ponsel yang bisa dibuka-tutup -->
-      <details class="menu-ponsel">
-        <summary>Menu</summary>
-        <nav>
-          <ul>
-            <li><a href="index.html">Beranda</a></li>
-            <li><a href="proyek.html">Proyek</a></li>
-            <li><a href="kontak.html">Kontak</a></li>
-            <li><a href="kalkulator.html">Kalkulator</a></li>
-          </ul>
-        </nav>
-      </details>
+      <button type="button" id="tombol-tema" class="tombol-tema">Mode Gelap</button>
     </div>
   </header>
 
   <main>
     <div class="container">
-      <section>
-        <h2>Proyek Saya</h2>
-        <p>Kumpulan hasil belajar saya di Kelas Industri UBIG.</p>
-        <div class="filter">
-          <button type="button" class="tombol-filter" id="filter-semua">Semua</button>
-          <button type="button" class="tombol-filter" id="filter-html">HTML</button>
-          <button type="button" class="tombol-filter" id="filter-css">CSS</button>
-          <button type="button" class="tombol-filter" id="filter-javascript">JavaScript</button>
-        </div>
-        <p id="jumlah-proyek"></p>
-        <div class="daftar-kartu" id="daftar-proyek"></div>
-      </section>
+      <h2>Proyek Saya</h2>
+      <p>Kumpulan hasil belajar saya di Kelas Industri UBIG.</p>
 
-      <!-- FAQ dengan details dan summary -->
+      <div class="filter">
+        <button type="button" class="tombol-filter aktif" id="filter-semua">Semua</button>
+        <button type="button" class="tombol-filter" id="">HTML</button>
+        <button type="button" class="tombol-filter" id="filter-css">CSS</button>
+        <button type="button" class="tombol-filter" id="filter-javascript">JavaScript</button>
+      </div>
+      <p id="jumlah-proyek"></p>
+      <div class="daftar-kartu" id="daftar-proyek"></div>
+
       <section class="kartu">
         <h2>Pertanyaan yang Sering Diajukan</h2>
         <details>
           <summary>Bahasa apa yang dipakai untuk membuat proyek ini?</summary>
-          <p>Proyek di halaman ini dibuat dengan HTML, CSS, dan JavaScript.
-            Pilih tombol kategori di atas untuk melihat proyek per bahasa.</p>
-        </details>
-        <details>
-          <summary>Apakah saya menerima pesanan pembuatan website?</summary>
-          <p>Belum, saya masih belajar. Namun kamu tetap boleh menghubungi saya melalui halaman Kontak.</p>
+          <p>Proyek di halaman ini dibuat dengan HTML, CSS, dan JavaScript. Pilih tombol kategori di atas untuk melihat
+            proyek per bahasa.</p>
         </details>
       </section>
     </div>
   </main>
+  <script>
+    const btnTema = document.getElementById("btnTema");
+    const body = document.body;
 
- <footer>
-    <p>Kontak: <a href="mailto::ZahavMei.rpl1@gmail.com" target="_blank">:maicaxpplg0@gmail.com</a> |
-      <a href="https://github.com/919mayygaa" target="_blank">GitHub</a> |
-      <a href="https://www.youtube.com/@maicaxpplg_1" target="_blank">YouTube</a></p>
-    <p>&copy; 2026 Zahva Meisalva Zailla. Dibuat di Kelas Industri UBIG.</p>
+    btnTema.addEventListener("click", function () {
+
+      body.classList.toggle("dark-mode");
+
+      if (body.classList.contains("dark-mode")) {
+        btnTema.textContent = "☀️ Mode Terang";
+      } else {
+        btnTema.textContent = "🌙 Mode Gelap";
+      }
+
+    });
+  </script>
+
+  <footer>
+    <p>&copy; 2026 Zahva Meisalva Zailla</p>
+    <p>Portofolio Kelas Industri UBIG</p>
   </footer>
 </body>
+
 </html>
