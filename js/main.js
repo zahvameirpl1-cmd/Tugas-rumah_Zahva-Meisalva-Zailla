@@ -105,6 +105,7 @@ function pasangFilter(idTombol, kategori) {
         } else {
             tampilkanProyek(proyek.filter((item) => item.kategori === kategori));
         }
+        #daftar-repo
     });
 }
 
