@@ -1,14 +1,11 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Zahva Meisalva Zailla | Proyek</title>
   <link rel="icon" href="img/foto-profil.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@600;700&display=swap"
-    rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
   <script src="js/main.js" defer></script>
 </head>
@@ -35,12 +32,28 @@
 
       <div class="filter">
         <button type="button" class="tombol-filter aktif" id="filter-semua">Semua</button>
-        <button type="button" class="tombol-filter" id="">HTML</button>
+        <button type="button" class="tombol-filter" id="filter-html">HTML</button>
         <button type="button" class="tombol-filter" id="filter-css">CSS</button>
         <button type="button" class="tombol-filter" id="filter-javascript">JavaScript</button>
       </div>
       <p id="jumlah-proyek"></p>
       <div class="daftar-kartu" id="daftar-proyek"></div>
+      <section class="kartu">
+  <h2>Daftar Repositori</h2>
+  <button type="button" class="tombol-kecil" id="tombol-repo">
+    Sembunyikan Repositori
+  </button>
+
+  <div id="daftar-repo">
+  <p>
+    <a href="https://github.com/zahva/bikinwordpress" target="_blank" rel="noopener noreferrer">
+      Lihat repositori di GitHub
+    </a>
+  </p>
+</div>
+    <!-- Daftar repositori diletakkan di sini -->
+  </div>
+</section>
 
       <section class="kartu">
         <h2>Pertanyaan yang Sering Diajukan</h2>
@@ -48,13 +61,11 @@
           <summary>Bahasa apa yang dipakai untuk membuat proyek ini?</summary>
           <p>Proyek di halaman ini dibuat dengan HTML, CSS, dan JavaScript. Pilih tombol kategori di atas untuk melihat
             proyek per bahasa.</p>
-            <button type="button" class="tombol-kecil" id="tombol-repo">Sembunyikan Repositori</button>
-        </details>
       </section>
     </div>
   </main>
   <script>
-    const btnTema = document.getElementById("btnTema");
+    const btnTema = document.getElementById("tombol-tema");
     const body = document.body;
 
     btnTema.addEventListener("click", function () {
@@ -75,4 +86,5 @@
     <p>Portofolio Kelas Industri UBIG</p>
   </footer>
 </body>
+
 </html>

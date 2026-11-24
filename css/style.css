@@ -16,15 +16,17 @@ img {
 
 /* 2. Dasar halaman: warna dan huruf */
 body {
-  font-family: "Inter", Arial, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
   font-size: 1rem;
   line-height: 1.6;
   color: #333333;
   background-color: #F1FAEE;
 }
 
-h1, h2, h3 {
-  font-family: "Poppins", Arial, sans-serif;
+h1,
+h2,
+h3 {
+  font-family: Arial, Helvetica, sans-serif;
   color: #1D3557;
   line-height: 1.3;
 }
@@ -33,7 +35,9 @@ h2 {
   margin-bottom: 0.75rem;
 }
 
-p, ul, ol {
+p,
+ul,
+ol {
   margin-bottom: 1rem;
 }
 
@@ -172,7 +176,8 @@ caption {
   margin-bottom: 0.5rem;
 }
 
-th, td {
+th,
+td {
   border: 1px solid #CCCCCC;
   padding: 0.5rem 0.75rem;
   text-align: left;
@@ -188,7 +193,9 @@ label {
   font-weight: 600;
 }
 
-input, select, textarea {
+input,
+select,
+textarea {
   width: 100%;
   max-width: 22rem;
   padding: 0.6rem;
@@ -209,13 +216,17 @@ button {
   font-size: 1rem;
   font-weight: 600;
   cursor: pointer;
-
-  button {
-    class .tombol-kecil 
-    class .tersembunyi
-    display: none.
-  }
 }
+
+.tombol-kecil {
+  padding: 8px 16px;
+  font-size: 0.9rem;
+}
+
+.tersembunyi {
+  display: none;
+}
+
 /* 7. Footer */
 footer {
   background-color: #1D3557;
@@ -266,4 +277,24 @@ footer a {
   .hero h2 {
     font-size: 2.75rem;
   }
+}
+
+.tombol-kecil {
+  padding: 8px 16px;
+  font-size: 0.9rem;
+}
+
+.tersembunyi {
+  display: none;
+}
+
+#daftar-proyek .kartu img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: contain;
+}
+#daftar-proyek {
+  min-height: 30rem;
 }

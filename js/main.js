@@ -1,4 +1,4 @@
-// JavaScript portofolio Flavea Verona Al Husein
+// JavaScript portofolio Zahva Meisaalva Zailla
 // Dipasang di ketiga halaman dengan defer
 
 // 1. Daftar keahlian (halaman Beranda)
@@ -71,6 +71,7 @@ const proyek = [
 
 ];
 
+window.proyek = proyek;
 const daftarProyek = document.querySelector("#daftar-proyek");
 const jumlahProyek = document.querySelector("#jumlah-proyek");
 
@@ -105,14 +106,30 @@ function pasangFilter(idTombol, kategori) {
         } else {
             tampilkanProyek(proyek.filter((item) => item.kategori === kategori));
         }
-        #daftar-repo
     });
 }
 
 if (daftarProyek) {
     tampilkanProyek(proyek);
+
     pasangFilter("#filter-semua", "Semua");
     pasangFilter("#filter-html", "HTML");
     pasangFilter("#filter-css", "CSS");
     pasangFilter("#filter-javascript", "JavaScript");
+}
+
+// Tombol tampil/sembunyikan repositori
+const tombolRepo = document.getElementById("tombol-repo");
+const daftarRepo = document.getElementById("daftar-repo");
+
+if (tombolRepo && daftarRepo) {
+    tombolRepo.addEventListener("click", function () {
+        daftarRepo.classList.toggle("tersembunyi");
+
+        if (daftarRepo.classList.contains("tersembunyi")) {
+            tombolRepo.textContent = "Tampilkan Repositori";
+        } else {
+            tombolRepo.textContent = "Sembunyikan Repositori";
+        }
+    });
 }
